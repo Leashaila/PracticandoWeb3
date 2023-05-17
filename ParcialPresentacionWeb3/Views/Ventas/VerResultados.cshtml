@@ -1,0 +1,44 @@
+﻿@model List<ParcialPresentacionWeb3Modelo.ClienteModelo>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Ver Resultados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>IdVenta</th>
+            <th>Cliente</th>
+            <th>Cantidad Vendida</th>
+            <th>Precio Unitario</th>
+            <th>Total Venta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count == 0)
+        {
+            <tr>
+                <th>-</th>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+
+            </tr>
+        }
+        @foreach (var resultado in Model)
+        {
+            <tr>
+
+                <td>@resultado.id</td>
+                <td>@resultado.Cliente</td>
+                <td>@resultado.CantidadVendida</td>
+                <td>@resultado.PrecioUnitario</td>
+                <td>@resultado.TotalVenta</td>
+            </tr>
+        }
+    </tbody>
+</table>
